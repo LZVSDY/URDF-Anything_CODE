@@ -1,0 +1,23 @@
+# save 
+/output
+
+# ckpt
+/ckpt
+**/checkpoints/
+
+# data
+**/data
+/mobility_dataset
+
+# pyc
+**/__pycache__/
+
+# log
+**/log
+
+# vis
+vis_output/
+playground
+ckpt
+output
+wandb
