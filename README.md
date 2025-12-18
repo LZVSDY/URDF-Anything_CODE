@@ -77,3 +77,9 @@ bash ./run_train.sh
       url={https://arxiv.org/abs/2511.00940}, 
 }
 ```
+
+## 📄 License
+This project is released under the [MIT License](LICENSE).
+
+## 🙏 Acknowledgement
+This codebase is built upon [ShapeLLM](https://github.com/qizekun/ShapeLLM), [Uni3D](https://github.com/baaivision/Uni3D) and [LISA](https://github.com/dvlab-research/LISA.git). We thank the authors for their open-source contributions.
