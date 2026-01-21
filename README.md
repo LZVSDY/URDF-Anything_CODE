@@ -39,7 +39,25 @@ We introduce **URDF-Anything**, an end-to-end automatic reconstruction framework
     <img src="figure/URDF-Anything_teaser.png" height=250>
 </div>
 
+## Roadmap / Schedule
 
+* [✅ ] 🧹 **Repo polish & consistency**
+
+  - Finalize module/file organization (e.g., `seg_decoder/decoder.py`, `PointCrossAttentionDecoder`)
+  - Ensure the repo runs out-of-the-box
+
+* [ ] 🗂️ **Dataset preprocessing**
+
+  - Provide PartNet-Mobility preprocessing scripts and documentation
+  - Provide URDF dataset preparation scripts
+
+* [ ] 🚀 **Inference**
+
+  - Release inference scripts with CLI/config examples
+
+* [ ] 📦 **Weights / checkpoints**
+
+  - Publish pretrained weights/checkpoints
 
 
 ## Installation
