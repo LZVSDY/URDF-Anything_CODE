@@ -46,16 +46,16 @@ We introduce **URDF-Anything**, an end-to-end automatic reconstruction framework
   - Finalize module/file organization (e.g., `seg_decoder/decoder.py`, `PointCrossAttentionDecoder`)
   - Ensure the repo runs out-of-the-box
 
-* [ ] 🗂️ **Dataset preprocessing**
+* [✅ ] 🗂️ **Dataset preprocessing**
 
   - Provide PartNet-Mobility preprocessing scripts and documentation
-  - Provide URDF dataset preparation scripts
+  - Provide URDF-Anything datasets
 
 * [ ] 🚀 **Inference**
 
   - Release inference scripts with CLI/config examples
 
-* [ ] 📦 **Weights / checkpoints**
+* [✅ ] 📦 **Weights / checkpoints**
 
   - Publish pretrained weights/checkpoints
 
@@ -75,6 +75,7 @@ Please download the following pretrained model weights and place them in the spe
 - Download the general-purpose checkpoint from [ShapeLLM](https://github.com/qizekun/ShapeLLM/blob/main/docs/MODEL_ZOO.md) and save it to: ./checkpoints/ShapeLLM_7B_general_v1.0
 - Download Uni3D checkpoint from [Uni3D](https://github.com/baaivision/Uni3D) and save it to: ./checkpoints/Uni3D
 - Download Recon checkpoint from [ShapeLLM](https://github.com/qizekun/ShapeLLM/blob/main/docs/MODEL_ZOO.md) and save it to: ./checkpoints/recon
+- Download URDA-Anything checkpoint from [URDF-Anything](https://huggingface.co/only34U/urdf-anything)
 
 
 ## Training
@@ -82,6 +83,13 @@ Start the training process with:
 ```bash
 bash ./run_train.sh
 ```
+
+## Evaluation
+Start the evaluation process with:  
+```bash
+bash ./eval.sh
+```
+
 
 ## Citation
 ```bibtex
