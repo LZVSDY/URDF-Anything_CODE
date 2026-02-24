@@ -46,14 +46,14 @@ We introduce **URDF-Anything**, an end-to-end automatic reconstruction framework
   - Finalize module/file organization (e.g., `seg_decoder/decoder.py`, `PointCrossAttentionDecoder`)
   - Ensure the repo runs out-of-the-box
 
-* [✅ ] 🗂️ **Dataset preprocessing**
+* [✅ ] 🗂️ **Dataset**
 
   - Provide PartNet-Mobility preprocessing scripts and documentation
   - Provide URDF-Anything datasets
 
-* [ ] 🚀 **Inference**
+* [✅ ] 🚀 **Evaluation**
 
-  - Release inference scripts with CLI/config examples
+  - Release evaluation scripts
 
 * [✅ ] 📦 **Weights / checkpoints**
 
@@ -72,20 +72,23 @@ We introduce **URDF-Anything**, an end-to-end automatic reconstruction framework
 
 ## Pretrained Weights
 Please download the following pretrained model weights and place them in the specified directories:
-- Download the general-purpose checkpoint from [ShapeLLM](https://github.com/qizekun/ShapeLLM/blob/main/docs/MODEL_ZOO.md) and save it to: ./checkpoints/ShapeLLM_7B_general_v1.0
+- Download the general-purpose checkpoint from [ShapeLLM](https://github.com/qizekun/ShapeLLM/blob/main/docs/MODEL_ZOO.md) and save it to: ./checkpoints/ShapeLLM_7B_gapartnet_v1.0
 - Download Uni3D checkpoint from [Uni3D](https://github.com/baaivision/Uni3D) and save it to: ./checkpoints/Uni3D
 - Download Recon checkpoint from [ShapeLLM](https://github.com/qizekun/ShapeLLM/blob/main/docs/MODEL_ZOO.md) and save it to: ./checkpoints/recon
 - Download URDA-Anything checkpoint from [URDF-Anything](https://huggingface.co/only34U/urdf-anything)
 
+## Dataset Preparation
+We provide the processed dataset containing 3D point clouds and their corresponding structured JSON annotations (kinematic parameters and segmentation masks).
+Download the  dataset from [URDF-Anything](https://huggingface.co/datasets/only34U/urdf-anything).
 
 ## Training
-Start the training process with:
+We provide the training scripts for reference.
 ```bash
 bash ./run_train.sh
 ```
 
 ## Evaluation
-Start the evaluation process with:  
+To evaluate the model's performance on joint parameter prediction and part segmentation, run:
 ```bash
 bash ./eval.sh
 ```

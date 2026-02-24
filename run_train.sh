@@ -1,21 +1,22 @@
 #!/bin/bash
-home_dir=xxx
+export home_dir=.
+cd $home_dir
 
-LLM_VERSION=./checkpoints/ShapeLLM_7B_general_v1.0
+LLM_VERSION=./checkpoints/ShapeLLM_7B_gapartnet_v1.0
+DATA_ROOT=./datasets/urdf
 
 export TZ='Asia/Shanghai'
 CURRENT_TIME=$(date +"%m%d_%H%M")
 echo "Current time: $CURRENT_TIME"
-export CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7
 
-
-python train_lightning.py \
+CUDA_VISIBLE_DEVICES=0 python train_lightning.py \
     --lora_enable True --lora_r 8 --lora_alpha 16 --mm_projector_lr 2e-5 \
     --model_name_or_path $LLM_VERSION \
     --version v1 \
     --vision_tower ./model/ReConV2/cfgs/pretrain/large/openshape.yaml \
     --vision_tower_path ./checkpoints/recon/large.pth \
     --backbone3d_path ./checkpoints/Uni3D/uni3d-b/model.pt \
+    --data_root $DATA_ROOT \
     --sample_points_num 2048 \
     --with_color True \
     --occlusion False \
@@ -45,6 +46,4 @@ python train_lightning.py \
     --model_max_length 2048 \
     --dataloader_num_workers 0 \
     --lazy_preprocess True \
-    --report_to wandb \
-    --predict_type all_parameters 
-      
+    --report_to wandb 
